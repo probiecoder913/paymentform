@@ -1,19 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .content{
-    max-width: calc(50% + 380px);
+    -webkit-font-smoothing: antialiased;
+    width: calc(50% + 380px);
+    margin: auto;
     display: flex;
-    width: 100vh;
+    height: fit-content;
     max-width: 100%;
     flex-direction: column;
-    align-items: center;
     font-family: "Muli", "Lato", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.content::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+    border-left: 16px solid #0d2366;
 }
 .head{
     width: 80%;
     display: flex;
     flex-direction: row;
+    left: 0;
+    text-align: left;
+    padding: 24px 0;
+    margin: 20px 0;
+    color: #0d2366;
 }
 .head img{
-    width: 50px;
+    width: 60px;
+    height: 60px;
     text-align: center;
     position: relative;
     border-radius: 3px;
@@ -22,20 +42,88 @@
     padding: 8px;
 }
 .head h1{
-    font-weight: bold;
+    font-weight: 500;
     line-height: 28px;
-    max-width: 80%;
+    width: 40%;
     display: inline-block;
     vertical-align: middle;
     padding-left: 16px;
     font-size: 18px;
 }
-content .body{
+.content .body{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+}
+.content .body .magpage{
+    margin-right: 50px;
+    width: 404.875px;
+}
+.content .body .magpage .title--big{
+    font-size: 24px;
+    line-height: 32px;
+    position: relative;
+    color: #0d2366;
+    overflow-wrap: break-word;
+    font-weight: bold;
+}
+
+.content .body .magpage .title-underline{
+    border-bottom: 5px solid rgb(35,113,236);;
+    width: 28px;
+    margin: 20px 0;
+}
+.content .body .magpage img{
+    display: block;
+    margin: 8px 0;
+    max-width: 100%;
+}
+.content .body .magpage p,h3,h4{
+    color: rgb(88, 102, 110);
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 22px;
+    margin: 6px 0;
+}
+.content .body .magpage .support-details{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    color: #0d2366;
+}
+.content .body .magpage .support-details label{
+    font-weight: 500;
+}
+.content .body .magpage .support-details a{
+    display: inline-flex;
+    flex-direction: row;
+    text-decoration: none;
+    color: #0d2366;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 400;
+    /* display: inline-block; */
+    padding: 5px 0;
+}
+.content .body .magpage .support-details .sub-detail svg{
+    margin-right: 10px;
+    fill: #0d2366;
+}
+.content .body .magpage .terms-details {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    color: #0d2366;
+    margin-bottom: 8px;
+}
+.content .body .magpage .terms-details span{
+    color: rgb(88, 102, 110)!important;
+    margin: 10px 0 20px 0;
+    font-weight: 400;
+    display: block;
 }
 form{
-    width: 430px;
+    width: 480px;
     border: 1px solid #e2e2e2;;
     /* padding: 20px 20px 0px 20px; */
     height: 450px;
@@ -47,16 +135,19 @@ form{
     box-shadow: 0 2px 4px 0 rgb(0 0 0 / 18%);
     background: #fff;
 }
-form h2{
+form h1{
     padding: 0;
-    margin: 20px 20px 0 20px;
+    margin: 30px 30px 0 30px;
     text-transform: capitalize;
     color: #0d2366;
+    font-weight: 500;
+    line-height: 28px;
+    font-size: 18px;
 }
 form .title-underline{
-    border-bottom: 5px solid rgb(35,113,236);;
+    border-bottom: 5px solid rgb(35,113,236);
     width: 28px;
-    margin: 20px;
+    margin: 20px 30px;
 }
 form .form-foot{
     width: 100%;
@@ -71,9 +162,8 @@ form .form-foot{
     background-color: #f5f6f7;
 }
 form .form-foot img{
-    width: 160px;
-    float: left;
-    padding-left: 20px;
+    width: 180px;
+    padding-left: 30px;
     height: 10px;
 }
 
@@ -101,9 +191,6 @@ form input{
     letter-spacing: .5px;
     width: 220px;
 }
-form .form-entries input .ng-dirty{
-    border: 1px solid #ff5d5d;
-}
 form .amount-div input{
     border: 1px solid powderblue;
     cursor: not-allowed;
@@ -119,7 +206,7 @@ form .form-entries{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    margin: 0 20px;
+    margin: 0 30px;
     height: 100%;
     position: relative;
     float: left;
